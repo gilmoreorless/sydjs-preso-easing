@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>SydJS Easing Presentation</title>
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	
+	<link rel="stylesheet" href="css/deck.core.css" type="text/css">
+	<link rel="stylesheet" href="css/web-2.0.css" type="text/css">
+	<link rel="stylesheet" href="css/horizontal-slide.css" type="text/css">
+	
+<!--	<script src="js/modernizr.custom.js"></script>-->
+</head>
+<body class="deck-container">
+
+	<section class="slide" id="start">
+		<h1>Ease Yourself Into Animation</h1>
+		<h2 class="slide">[TWSS]</h2>
+	</section>
+	
+	<section class="slide" id="intro">
+		<h2>[Intro]</h2>
+		<ul>
+			<li class="slide2">[Atlassian]</li>
+			<li class="slide2">[SydJS attendance]</li>
+			<li class="slide2">[Twitter]</li>
+			<li class="slide2">["Bullet points"]</li>
+		</ul>
+	</section>
+
+	<section class="slide" id="history">
+		<h2>A Brief History of <span class="slide">Distance/</span>Time</h2>
+		[Insert faces here]
+		<h3 class="slide">Easing!</h3>
+	</section>
+
+	<section class="slide" id="penner">
+		<h2>Robert Penner</h2>
+		<ul>
+			<li>[Flash dev]</li>
+			<li>[Needed more natural animations, programmatically]</li>
+			<li>[Created the first Easing function]</li>
+			<li>[His functions are the cornerstone of all JS animation techniques]</li>
+		</ul>
+	</section>
+
+	<section class="slide" id="first-easing">
+		<h2>The first easing function</h2>
+		<pre><code>
+function(){
+ a
+ b
+ return c
+}
+		</code></pre>
+		<p class="slide">Variables minified for AS1 interpreter quirks <span class="slide">&ndash; perfect for JS</span></p>
+		<blockquote class="slide">
+			<p>"Variables with longer names take longer to look up than variables with short names, because of the interpreter’s internal hashing procedure."</p>
+			<cite>Robert Penner</cite>
+		</blockquote>
+	</section>
+	
+	<section class="slide" id="js-impl-1">
+		<h2>JS Implementation #1 - Penner Ported</h2>
+		<p>Penner's equations copied almost exactly</p>
+		<p class="implementors">jQuery &amp; jQuery UI</p>
+		
+		<div class="overview-example" id="flash-impl">
+			<strong>Penner's ActionScript</strong>
+			<pre><code>function (a,b,c,d) {
+ e
+ f
+ return g
+}</code></pre>
+		</div>
+		
+		<div class="overview-example" id="js-impl-jquery">
+			<strong>jQuery</strong>
+			<pre><code>function (a,b,c,d) {
+ e
+ f
+ return g
+}</code></pre>
+		</div>
+	</section>
+	
+	<section class="slide" id="how-it-works-basic">
+		<h2>Easing for Dummies</h2>
+		<p>Clandestine rendezvous between secret agents:</p>
+		<p class="slide rendezvous"><strong>Mr A.</strong> &ndash; Animation [picture]</p>
+		<p class="slide rendezvous"><strong>Mr E.</strong> &ndash; Easing [picture]</p>
+		<p class="slide rendezvous">[picture - "I'll set the time, you set the place"]</p>
+	</section>
+	
+	<section class="slide" id="how-it-works-desc">
+		<h2>Easing for Smarties</h2>
+		<p>At its most basic level, an easing function takes the amount of time that has elapsed for an animation,
+			and returns a new position for the element being animated based on the time.</p>
+		<p class="slide">Confused? <span class="slide">Never fear, shiny graphs to the rescue!</span></p>
+	</section>
+	
+	<section class="slide" id="how-it-works-demo">
+		<h2>Easing for Those Who Like Graphs</h2>
+		<div id="hiwd-container">
+			<div class="animatable hiwd-animatable" id="hwid-anim-sine">Sine</div>
+			<div class="animatable hiwd-animatable" id="hwid-anim-linear">Linear</div>
+			<div class="graph-container" id="hiwd-graph-container">
+				[Interactive Raphael graph goes here]
+			</div>
+		</div>
+		<p class="slide">Check out [link]James Padolsey's Interactive Easing Demo[/link] for more fun.</p>
+	</section>
+	
+	<section class="slide" id="common-easing-methods">
+		<h2>Common Easing Methods</h2>
+		<div class="cemd-anim-container">
+			<h3>Smooth Curves</h3>
+			<div class="slide animatable cemd-animatable" id="cemd-anim-sine">Sine</div>
+			<div class="slide animatable cemd-animatable" id="cemd-anim-quad">Quad</div>
+			<div class="slide animatable cemd-animatable" id="cemd-anim-cubic">Cubic</div>
+			<div class="slide animatable cemd-animatable" id="cemd-anim-quart">Quart</div>
+			<div class="slide animatable cemd-animatable" id="cemd-anim-quint">Quint</div>
+			<div class="slide animatable cemd-animatable" id="cemd-anim-expo">Expo(nential)</div>
+			<div class="slide animatable cemd-animatable" id="cemd-anim-circle">Circle</div>
+		</div>
+		<div class="cemd-anim-container slide">
+			<h3>Special Effects</h3>
+			<div class="slide animatable cemd-animatable" id="cemd-anim-back">Back</div>
+			<div class="slide animatable cemd-animatable" id="cemd-anim-bounce">Bounce</div>
+			<div class="slide animatable cemd-animatable" id="cemd-anim-elastic">Elastic</div>
+		</div>
+		<div class="graph-container" id="cemd-container">
+			[Easing graph goes here]
+		</div>
+	</section>
+	
+	<section class="slide" id="js-impl-2">
+		<h2>JS Implementation #2 - Cruft Removal</h2>
+		<p>Single parameter for percentage<span class="slide"> &ndash; everything else should be handled elsewhere.</span></p>
+		<p class="implementors">Raphaël &amp; Scriptaculous</p>
+		
+		<div class="overview-example" id="js-impl-raphael">
+			<strong>Raphaël</strong> &ndash; similar to Penner's but tweaked
+			<pre><code>function (n) {
+    return pow(n, 1.7);
+}</code></pre>
+		</div>
+		
+		<div class="overview-example" id="js-impl-scriptaculous">
+			<strong>Scriptaculous</strong> &ndash; almost, but not entirely, quite unlike the others for inbuilt easing functions
+			<pre><code>function(pos) {
+  return (-Math.cos(pos*Math.PI)/2) + .5;
+}</code></pre>
+		</div>
+	</section>
+	
+	<section class="slide" id="examination">
+		<h2>Look a little deeper: ease-in-back</h2>
+		<h3 class="slide">Redundant code is redundant<span class="slide">, and redundant as well</span></h3>
+		<p class="slide">Easing functions shouldn't have to care about the start/end values, only the percentage matters.</p>
+		<p class="slide">1.70158 = Penner's Magic Number.</p>
+		
+		<div class="overview-example" id="js-impl-back-jquery">
+			<strong>jQuery.easing.easeInBack</strong>
+			<pre><code>function (<span class="perc">x</span><span class="redundant">, t, b, c, d, s</span>) {
+  if (s == undefined) s = <span class="penner-magic">1.70158</span>;
+  return <span class="redundant">c * <span class="perc">(t /= d)</span></span> * t * ((s + 1) * t - s)<span class="redundant"> + b</span>;
+}
+</code></pre>
+		</div>
+		
+		<div class="overview-example" id="js-impl-back-raphael">
+			<strong>Raphael.easing_formulas.backIn</strong>
+			<pre><code>function (<span class="perc">n</span>) {
+  var s = <span class="penner-magic">1.70158</span>;
+  return n * <span class="perc">n</span> * ((s + 1) * n - s);
+}</code></pre>
+		</div>
+	</section>
+	
+	<section class="slide" id="js-impl-3">
+		<h2>JS Implementation #3 - Atoms</h2>
+		<p>DRY &ndash; maximum code reuse.</p>
+		<p class="implementors">MooTools &amp; D3</p>
+		
+		<div class="overview-example hide-on-next" id="js-impl-mootools">
+			<strong>MooTools</strong>
+			<pre><code>['Quad', 'Cubic', 'Quart', 'Quint'].each(function(transition, i){
+  Fx.Transitions[transition] = new Fx.Transition(function(p){
+    return Math.pow(p, i + 2);
+  });
+});</code></pre>
+		</div>
+		
+		<div class="overview-example slide" id="js-impl-raphael">
+			<strong>D3</strong>
+			<pre><code>var d3_ease_mode = {
+  "in": function(f) { return f; },
+  "out": d3_ease_reverse,
+  "in-out": d3_ease_reflect,
+  "out-in": function(f) { return d3_ease_reflect(d3_ease_reverse(f)); }
+};
+
+function d3_ease_reverse(f) {
+  return function(t) {
+    return 1 - f(1 - t);
+  };
+}
+
+function d3_ease_reflect(f) {
+  return function(t) {
+    return .5 * (t < .5 ? f(2 * t) : (2 - f(2 - 2 * t)));
+  };
+}</code></pre>
+		</div>
+	</section>
+	
+	<section class="slide" id="keanu-woah">
+		<h2>There Is No Spoon</h2>
+		[picture of Neo]
+		<div class="hide-on-next">
+			<p>Once you know the workings, you can manipulate.</p>
+			<h3>Shameless self promotion</h3>
+			<p><a href="http://gilmoreorless.github.com/jquery-easing-repeater/">jQuery Easing Repeater</a></p>
+			<p><a href="http://gilmoreorless.github.com/jquery-easing-molecules/">jQuery Easing Molecules</a></p>
+		</div>
+		
+		<div class="slide tardis">
+			<h3>Up and atom!</h3>
+			<pre><code>function d3_ease_tardis(p) {
+  if (p < 1/5) return .5 * d3_ease_sin(p * 5);
+  return p;
+}</code></pre>
+		</div>
+	</section>
+	
+	<section class="slide" id="css">
+		<h2>A Little Bit of CSS</h2>
+		<div class="hide-on-next">
+			<p>CSS easing functions based on bezier curves.</p>
+			<pre><code>transition-function: ease-in;
+/* Equivalent to */
+transition-function: cubic-bezier(0.25, 0, 1, 0.75);
+</code></pre>
+			[image of CSS easing graph]
+		</div>
+		
+		<div class="slide">
+			[image of 300/SydCSS]
+			<h3>But wait!</h3>
+			<p>Raphaël supports the cubic bezier syntax, so there is relevance after all.</p>
+			<pre><code>elem.animate(params, duration, "cubic-bezier(0.25, 0, 1, 0.75)")</code></pre>
+		</div>
+	</section>
+	
+	<section class="slide" id="theend">
+		<h1>Questions?</h1>
+	</section>
+
+	<!-- Other extension HTML snippets go here, at the bottom of the deck container. -->
+
+	<script src="js/jquery-1.6.2.min.js"></script>
+	<script src="js/deck.core.js"></script>
+	<!--<script src="js/deck.hash.js"></script>-->
+
+	<script>
+		$(function() {
+			$.deck('.slide');
+		});
+	</script>
+</body>
+</html>
