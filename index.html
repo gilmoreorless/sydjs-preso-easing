@@ -6,25 +6,24 @@
 	<meta name="viewport" content="width=1024, user-scalable=no">
 	
 	<link rel="stylesheet" href="css/deck.core.css" type="text/css">
-	<link rel="stylesheet" href="css/web-2.0.css" type="text/css">
-	<link rel="stylesheet" href="css/horizontal-slide.css" type="text/css">
+	<link rel="stylesheet" href="css/easing-preso.css" type="text/css">
+<!--	<link rel="stylesheet" href="css/horizontal-slide.css" type="text/css">-->
 	
-<!--	<script src="js/modernizr.custom.js"></script>-->
+	<script src="js/modernizr.custom.js"></script>
 </head>
 <body class="deck-container">
 
 	<section class="slide" id="start">
-		<h1>Ease Yourself Into Animation</h1>
-		<h2 class="slide">[TWSS]</h2>
+		<h1>Ease Yourself Into Animation<span class="slide" id="ahem">(That’s what she said)</span></h1>
 	</section>
 	
 	<section class="slide" id="intro">
-		<h2>[Intro]</h2>
+		<h2>Who’s This Clown?</h2>
 		<ul>
-			<li class="slide2">[Atlassian]</li>
-			<li class="slide2">[SydJS attendance]</li>
-			<li class="slide2">[Twitter]</li>
-			<li class="slide2">["Bullet points"]</li>
+			<li class="slide2">Gilmore Davidson, JS developer at Atlassian</li>
+			<li class="slide2">Attended every SydJS held so far</li>
+			<li class="slide2"><a href="http://twitter.com/iamnotyourbroom">@iamnotyourbroom</a></li>
+			<li class="slide2">Hey look! “Bullet” points</li>
 		</ul>
 	</section>
 
@@ -46,40 +45,35 @@
 
 	<section class="slide" id="first-easing">
 		<h2>The first easing function</h2>
-		<pre><code>
-function(){
- a
- b
- return c
-}
-		</code></pre>
-		<p class="slide">Variables minified for AS1 interpreter quirks <span class="slide">&ndash; perfect for JS</span></p>
-		<blockquote class="slide">
-			<p>"Variables with longer names take longer to look up than variables with short names, because of the interpreter’s internal hashing procedure."</p>
-			<cite>Robert Penner</cite>
-		</blockquote>
+		<pre><code>Math.easeInQuad = function (t, b, c, d) {
+  return c*(t/=d)*t + b;
+};</code></pre>
+		<div class="slide">
+			<p>Variables minified for AS1 interpreter quirks.</p>
+			<blockquote>
+				<p>Variables with longer names take longer to look up than variables with short names, because of the interpreter’s internal hashing procedure.</p>
+				<cite>Robert Penner</cite>
+			</blockquote>
+		</div>
+		<p class="slide">Perfect for byte-conscious JS!</p>
 	</section>
 	
 	<section class="slide" id="js-impl-1">
 		<h2>JS Implementation #1 - Penner Ported</h2>
-		<p>Penner's equations copied almost exactly</p>
-		<p class="implementors">jQuery &amp; jQuery UI</p>
+		<p class="implementors"><span>jQuery &amp; jQuery UI</span></p>
+		<p>Penner’s system copied almost exactly</p>
 		
 		<div class="overview-example" id="flash-impl">
-			<strong>Penner's ActionScript</strong>
-			<pre><code>function (a,b,c,d) {
- e
- f
- return g
-}</code></pre>
+			<strong>Penner’s ActionScript</strong>
+			<pre><code>Math.easeInOutSine = function (t, b, c, d) {
+  return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
+};</code></pre>
 		</div>
 		
 		<div class="overview-example" id="js-impl-jquery">
 			<strong>jQuery</strong>
-			<pre><code>function (a,b,c,d) {
- e
- f
- return g
+			<pre><code>jQuery.easing.swing = function( p, n, firstNum, diff ) {
+  return ( ( -Math.cos( p*Math.PI ) / 2 ) + 0.5 ) * diff + firstNum;
 }</code></pre>
 		</div>
 	</section>
@@ -95,7 +89,7 @@ function(){
 	<section class="slide" id="how-it-works-desc">
 		<h2>Easing for Smarties</h2>
 		<p>At its most basic level, an easing function takes the amount of time that has elapsed for an animation,
-			and returns a new position for the element being animated based on the time.</p>
+			and returns a new position for the animation based on a function of the time.</p>
 		<p class="slide">Confused? <span class="slide">Never fear, shiny graphs to the rescue!</span></p>
 	</section>
 	
@@ -136,18 +130,18 @@ function(){
 	
 	<section class="slide" id="js-impl-2">
 		<h2>JS Implementation #2 - Cruft Removal</h2>
-		<p>Single parameter for percentage<span class="slide"> &ndash; everything else should be handled elsewhere.</span></p>
-		<p class="implementors">Raphaël &amp; Scriptaculous</p>
+		<p class="implementors"><span>Raphaël &amp; Scriptaculous</span></p>
+		<p>Single parameter for percentage<span class="slide"> &ndash; everything else should be handled by the framework.</span></p>
 		
 		<div class="overview-example" id="js-impl-raphael">
-			<strong>Raphaël</strong> &ndash; similar to Penner's but tweaked
+			<strong>Raphaël</strong> &ndash; similar to Penner’s but tweaked
 			<pre><code>function (n) {
-    return pow(n, 1.7);
+  return pow(n, 1.7);
 }</code></pre>
 		</div>
 		
 		<div class="overview-example" id="js-impl-scriptaculous">
-			<strong>Scriptaculous</strong> &ndash; almost, but not entirely, quite unlike the others for inbuilt easing functions
+			<strong>Scriptaculous</strong> &ndash; very few Penner equations, provided defaults aren’t as useful
 			<pre><code>function(pos) {
   return (-Math.cos(pos*Math.PI)/2) + .5;
 }</code></pre>
@@ -156,9 +150,6 @@ function(){
 	
 	<section class="slide" id="examination">
 		<h2>Look a little deeper: ease-in-back</h2>
-		<h3 class="slide">Redundant code is redundant<span class="slide">, and redundant as well</span></h3>
-		<p class="slide">Easing functions shouldn't have to care about the start/end values, only the percentage matters.</p>
-		<p class="slide">1.70158 = Penner's Magic Number.</p>
 		
 		<div class="overview-example" id="js-impl-back-jquery">
 			<strong>jQuery.easing.easeInBack</strong>
@@ -176,12 +167,16 @@ function(){
   return n * <span class="perc">n</span> * ((s + 1) * n - s);
 }</code></pre>
 		</div>
+		
+		<h3 class="slide">Redundant code is redundant<span class="slide">, and redundant as well</span></h3>
+		<p class="slide" id="dont-care">Easing functions shouldn’t have to care about the start/end values, only the percentage matters.</p>
+		<p class="slide"><span class="penner-magic">1.70158</span> = Penner’s Magic Number.</p>
 	</section>
 	
 	<section class="slide" id="js-impl-3">
 		<h2>JS Implementation #3 - Atoms</h2>
+		<p class="implementors"><span>MooTools &amp; D3</span></p>
 		<p>DRY &ndash; maximum code reuse.</p>
-		<p class="implementors">MooTools &amp; D3</p>
 		
 		<div class="overview-example hide-on-next" id="js-impl-mootools">
 			<strong>MooTools</strong>
@@ -192,16 +187,9 @@ function(){
 });</code></pre>
 		</div>
 		
-		<div class="overview-example slide" id="js-impl-raphael">
+		<div class="overview-example slide" id="js-impl-d3">
 			<strong>D3</strong>
-			<pre><code>var d3_ease_mode = {
-  "in": function(f) { return f; },
-  "out": d3_ease_reverse,
-  "in-out": d3_ease_reflect,
-  "out-in": function(f) { return d3_ease_reflect(d3_ease_reverse(f)); }
-};
-
-function d3_ease_reverse(f) {
+			<pre><code>function d3_ease_reverse(f) {
   return function(t) {
     return 1 - f(1 - t);
   };
@@ -247,21 +235,27 @@ transition-function: cubic-bezier(0.25, 0, 1, 0.75);
 		
 		<div class="slide">
 			[image of 300/SydCSS]
-			<h3>But wait!</h3>
-			<p>Raphaël supports the cubic bezier syntax, so there is relevance after all.</p>
-			<pre><code>elem.animate(params, duration, "cubic-bezier(0.25, 0, 1, 0.75)")</code></pre>
+			<div class="slide">
+				<h3>But wait!</h3>
+				<p>Raphaël supports the cubic bezier syntax, so there is relevance after all.</p>
+				<pre><code>elem.animate(params, duration, "cubic-bezier(0.25, 0, 1, 0.75)")</code></pre>
+			</div>
 		</div>
 	</section>
 	
-	<section class="slide" id="theend">
+	<section class="slide" id="the-end">
 		<h1>Questions?</h1>
 	</section>
 
-	<!-- Other extension HTML snippets go here, at the bottom of the deck container. -->
+	<section class="slide" id="not-quite-the-end">
+		<h2>Links</h2>
+		TBC
+	</section>
 
 	<script src="js/jquery-1.6.2.min.js"></script>
 	<script src="js/deck.core.js"></script>
-	<!--<script src="js/deck.hash.js"></script>-->
+	<script src="js/deck.hash.js"></script>
+<!--	<script src="js/easing-preso.js"></script>-->
 
 	<script>
 		$(function() {
