@@ -24,7 +24,6 @@
   display: block;
   font-size: .6em;
   margin-top: .5em;
-/*  display: none;*/
   visibility: hidden;
 }
 .deck-container h2 {
@@ -250,8 +249,29 @@
 #dont-care {
 	margin-bottom: .4em;
 }
-.deck-container:not(.deck-menu) > .deck-before .hide-on-next,
-.deck-container:not(.deck-menu) > .deck-previous .hide-on-next,
-.hide-on-next + .slide.deck-next {
+#history .history {
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	height: 420px;
+	text-indent: -999em;
+	width: 700px;
+}
+#history1 {
+	background-image: url(../img/history1.png);
+}
+#history2 {
+	background-image: url(../img/history2.png);
+}
+#history3 {
+	background-image: url(../img/history3.png);
+}
+.deck-container:not(.deck-menu) > .deck-before .hide-on-next:not(.deck-current),
+.deck-container:not(.deck-menu) > .deck-previous .hide-on-next:not(.deck-current),
+.hide-on-next + .slide.deck-next,
+.hide-on-next + .slide.deck-after {
   display: none;
+}
+.deck-container ul {
+	font-size: 1.3em;
+	list-style-image: url(../img/bullet.png);
 }
