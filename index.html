@@ -54,20 +54,20 @@
 		<pre><code>Math.easeInQuad = function (t, b, c, d) {
   return c*(t/=d)*t + b;
 };</code></pre>
-		<div class="slide">
+		<div class="slide" id="min-actionscript">
 			<p>Variables minified for AS1 interpreter quirks.</p>
 			<blockquote>
 				<p>Variables with longer names take longer to look up than variables with short names, because of the interpreter’s internal hashing procedure.</p>
 				<cite>Robert Penner</cite>
 			</blockquote>
 		</div>
-		<p class="slide">Perfect for byte-conscious JS!</p>
+		<p class="slide" id="min-huzzah">Perfect for byte-conscious JS!</p>
 	</section>
 	
 	<section class="slide" id="js-impl-1">
 		<h2>JS Implementation #1 - Penner Ported</h2>
 		<p class="implementors"><span>jQuery &amp; jQuery UI</span></p>
-		<p>Penner’s system copied almost exactly</p>
+		<p>Penner’s system copied almost exactly.</p>
 		
 		<div class="overview-example" id="flash-impl">
 			<strong>Penner’s ActionScript</strong>
@@ -84,31 +84,26 @@
 		</div>
 	</section>
 	
-	<section class="slide" id="how-it-works-basic">
-		<h2>Easing for Dummies</h2>
+	<section class="slide img-header" id="how-it-works-basic">
+		<h2>Easing for <span>Dummies</span></h2>
 		<p>Clandestine rendezvous between secret agents:</p>
-		<p class="slide rendezvous"><strong>Mr A.</strong> &ndash; Animation [picture]</p>
-		<p class="slide rendezvous"><strong>Mr E.</strong> &ndash; Easing [picture]</p>
-		<p class="slide rendezvous">[picture - "I'll set the time, you set the place"]</p>
+		<p class="slide rendezvous" id="mr-a"><strong>Mr A.</strong> &ndash; Animation</p>
+		<p class="slide rendezvous" id="mr-e"><strong>Mr E.</strong> &ndash; Easing</p>
+		<p class="slide rendezvous" id="mr-me">[picture - "I'll set the time, you set the place"]</p>
 	</section>
 	
-	<section class="slide" id="how-it-works-desc">
-		<h2>Easing for Smarties</h2>
+	<section class="slide img-header" id="how-it-works-desc">
+		<h2>Easing for <span>Smarties</span></h2>
 		<p>At its most basic level, an easing function takes the amount of time that has elapsed for an animation,
 			and returns a new position for the animation based on a function of the time.</p>
-		<p class="slide">Confused? <span class="slide">Never fear, shiny graphs to the rescue!</span></p>
+		<p class="slide" id="confuzzled">Confused? Bored?</p>
+		<p class="slide" id="confusion-begone">Never fear, shiny graphs to the rescue!</p>
 	</section>
 	
 	<section class="slide" id="how-it-works-demo">
 		<h2>Easing for Those Who Like Graphs</h2>
-		<div id="hiwd-container">
-			<div class="animatable hiwd-animatable" id="hwid-anim-sine">Sine</div>
-			<div class="animatable hiwd-animatable" id="hwid-anim-linear">Linear</div>
-			<div class="graph-container" id="hiwd-graph-container">
-				[Interactive Raphael graph goes here]
-			</div>
-		</div>
-		<p class="slide">Check out [link]James Padolsey's Interactive Easing Demo[/link] for more fun.</p>
+		<div id="hiwd-container"></div>
+		<p class="slide" id="padolsey">Check out [link]James Padolsey’s Interactive Easing Demo[/link] for more fun.</p>
 	</section>
 	
 	<section class="slide" id="common-easing-methods">
@@ -116,12 +111,12 @@
 		<div class="cemd-anim-container">
 			<h3>Smooth Curves</h3>
 			<div class="slide animatable cemd-animatable" id="cemd-anim-sine">Sine</div>
-			<div class="slide animatable cemd-animatable" id="cemd-anim-quad">Quad</div>
+<!--			<div class="slide animatable cemd-animatable" id="cemd-anim-quad">Quad</div>
 			<div class="slide animatable cemd-animatable" id="cemd-anim-cubic">Cubic</div>
 			<div class="slide animatable cemd-animatable" id="cemd-anim-quart">Quart</div>
 			<div class="slide animatable cemd-animatable" id="cemd-anim-quint">Quint</div>
 			<div class="slide animatable cemd-animatable" id="cemd-anim-expo">Expo(nential)</div>
-			<div class="slide animatable cemd-animatable" id="cemd-anim-circle">Circle</div>
+			<div class="slide animatable cemd-animatable" id="cemd-anim-circle">Circle</div>-->
 		</div>
 		<div class="cemd-anim-container slide">
 			<h3>Special Effects</h3>
@@ -137,7 +132,7 @@
 	<section class="slide" id="js-impl-2">
 		<h2>JS Implementation #2 - Cruft Removal</h2>
 		<p class="implementors"><span>Raphaël &amp; Scriptaculous</span></p>
-		<p>Single parameter for percentage<span class="slide"> &ndash; everything else should be handled by the framework.</span></p>
+		<p>Single parameter for percentage<span class="slide" id="js-impl-2-extra"> &ndash; everything else should be handled by the framework.</span></p>
 		
 		<div class="overview-example" id="js-impl-raphael">
 			<strong>Raphaël</strong> &ndash; similar to Penner’s but tweaked
@@ -261,7 +256,10 @@ transition-function: cubic-bezier(0.25, 0, 1, 0.75);
 	<script src="js/jquery-1.6.2.min.js"></script>
 	<script src="js/deck.core.js"></script>
 	<script src="js/deck.hash.js"></script>
-<!--	<script src="js/easing-preso.js"></script>-->
+	<script src="js/raphael.js"></script>
+	<script src="js/easing-molecules.js"></script>
+	<script src="js/easing-graph.js"></script>
+	<script src="js/easing-preso.js"></script>
 
 	<script>
 		$(function() {
