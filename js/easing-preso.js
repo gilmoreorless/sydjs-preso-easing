@@ -110,9 +110,7 @@
             playBox.attr({fill: colours.playBoxHover});
         }, function () {
             playBox.attr({fill: colours.playBox});
-        }).click(function () {
-            anim();
-        });
+        }).click(anim);
         
         
         var cStartX
@@ -137,14 +135,22 @@
             moveableSet.attr({timeY: perc})
         }
         
-        function anim(status) {
-            /**
-             * TODO:
-             * - switch between play/pause
-             * - if control is mid-journey, detect status and shorten animation
-             */
+        function anim() {
+            var currentTime = control.attr('timeX')
+            if (currentTime) {
+                moveableSet.attr('timeY', 0)
+                controlSet.attr('timeX', 0)
+                if (currentTime == 1) {
+                    currentTime = 0;
+                }
+            }
+            
             moveableSet.animate(moveableAnimation);
             controlSet.animateWith(moveable, moveableAnimation, controlAnimation);
+            if (currentTime) {
+                moveableSet.status(moveableAnimation, currentTime);
+                controlSet.status(controlAnimation, currentTime);
+            }
         }
     })();
 
