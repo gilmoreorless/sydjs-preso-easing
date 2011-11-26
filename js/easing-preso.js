@@ -2,7 +2,7 @@
 
     // Interactive easing graph
     (function () {
-        var paper = Raphael('hiwd-container', 500, 500)
+        var paper = Raphael('hiwd-container', 500, 420)
           , opts = {
                 paper: paper
               , width: 300

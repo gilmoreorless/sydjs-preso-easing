@@ -142,7 +142,7 @@
   color: #fff;
 }
 .deck-container a, .deck-container a:hover, .deck-container a:focus, .deck-container a:active, .deck-container a:visited {
-  color: #599;
+  color: #556C9B;
   text-decoration: none;
 }
 .deck-container a:hover, .deck-container a:focus {
@@ -193,6 +193,12 @@
   top: 0;
 }
 
+.deck-container:not(.deck-menu) > .deck-before .hide-on-next:not(.deck-current),
+.deck-container:not(.deck-menu) > .deck-previous .hide-on-next:not(.deck-current),
+.hide-on-next + .slide.deck-next,
+.hide-on-next + .slide.deck-after {
+	display: none;
+}
 .deck-container .implementors {
 	background: #efd;
 	border: 1px solid #0E58B9;
@@ -205,9 +211,9 @@
 	position: absolute;
 	left: 0;
 	top: 4.2em;
-	-webkit-transform: translateX(30%);
-	-moz-transform: translateX(30%);
-	transform: translateX(30%);
+	-webkit-transform: translateX(5%);
+	-moz-transform: translateX(5%);
+	transform: translateX(5%);
 }
 .deck-container .implementors span {
 	background: #efd;
@@ -265,13 +271,51 @@
 #history3 {
 	background-image: url(../img/history3.png);
 }
-.deck-container:not(.deck-menu) > .deck-before .hide-on-next:not(.deck-current),
-.deck-container:not(.deck-menu) > .deck-previous .hide-on-next:not(.deck-current),
-.hide-on-next + .slide.deck-next,
-.hide-on-next + .slide.deck-after {
-  display: none;
-}
 .deck-container ul {
 	font-size: 1.3em;
 	list-style-image: url(../img/bullet.png);
+}
+.img-header h2 span {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	display: inline-block;
+	text-indent: -999em;
+}
+#how-it-works-basic h2 span {
+	background-color: #041821;
+	background-image: url(../img/dummies.png);
+	border-radius: 10px;
+	height: 50px;
+	width: 198px;
+}
+#how-it-works-desc h2 span {
+	background-image: url(../img/smarties.png);
+	height: 55px;
+	margin-top: -5px;
+	width: 162px;
+}
+#how-it-works-basic .rendezvous {
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	height: 300px;
+	text-indent: -999em;
+	width: 600px;
+}
+#mr-a {
+	background-image: url(../img/rendezvous1.png);
+}
+#mr-e {
+	background-image: url(../img/rendezvous2.png);
+}
+#rendezvous {
+	background-image: url(../img/rendezvous3.png);
+}
+#rendezvoush {
+	background-image: url(../img/rendezvous4.png);
+}
+
+
+
+#hiwd-container {
+	position: relative;
 }
