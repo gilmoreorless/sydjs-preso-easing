@@ -66,6 +66,7 @@ Raphael.fn.drawGrid = Raphael.fn.drawGrid || function (x, y, w, h, wv, hv, color
           , opts.gridSize
           , '#555'
         );
+        this.paths = this.paper.set();
         this.hue = this.options.hue || ~~(Math.random() * 360);
     }
     
@@ -81,7 +82,7 @@ Raphael.fn.drawGrid = Raphael.fn.drawGrid || function (x, y, w, h, wv, hv, color
     
     gproto.nextColour = function () {
         var colour = 'hsl(' + [this.hue, 50, 50] + ')';
-        this.hue = (this.hue + 60) % 360;
+        this.hue = (this.hue + 43) % 360;
         return colour;
     }
     
@@ -90,6 +91,12 @@ Raphael.fn.drawGrid = Raphael.fn.drawGrid || function (x, y, w, h, wv, hv, color
         while (i--) {
             this.drawEasing(this.easings[i]);
         }
+    }
+    
+    gproto.clear = function () {
+        this.paths.forEach(function (elem) {
+            elem.remove();
+        }).clear();
     }
     
     gproto.drawEasing = function (easingFunc) {
@@ -132,7 +139,7 @@ Raphael.fn.drawGrid = Raphael.fn.drawGrid || function (x, y, w, h, wv, hv, color
             }
             path = path.concat('L', this.xyEasingToGrid(1, 1));
         }
-        this.paper.path(path).attr(attrs);
+        this.paths.push(this.paper.path(path).attr(attrs));
         return path;
     }
     
