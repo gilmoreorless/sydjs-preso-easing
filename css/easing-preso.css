@@ -7,8 +7,10 @@
   padding: 0;
 }
 .deck-container > .slide {
-/*  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);*/
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+.deck-container > .slide text {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 .deck-container pre, .deck-container code, .deck-container kbd, .deck-container samp {
   font-family: Consolas, monospace, sans-serif;
@@ -228,27 +230,27 @@
 	border: 1px solid #0E58B9;
 	position: absolute;
 	top: -.5em;
-	left: 50%;
-	-webkit-transform: translateX(-50%) rotate(45deg);
-	-moz-transform: translateX(-50%) rotate(45deg);
-	-transform: translateX(-50%) rotate(45deg);
+	left: 11px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-transform: rotate(45deg);
 	z-index: -1;
 }
 .deck-container .implementors + p {
 	padding-top: .7em;
 }
-.on-slide-36 .perc ,
-.on-slide-37 .perc {
+.on-slide-31 .perc ,
+.on-slide-32 .perc {
 	color: #00c;
 	font-weight: bold;
 }
-.on-slide-35 .redundant ,
-.on-slide-36 .redundant ,
-.on-slide-37 .redundant {
+.on-slide-30 .redundant ,
+.on-slide-31 .redundant ,
+.on-slide-32 .redundant {
 	color: #c00;
 	font-weight: bold;
 }
-.on-slide-38 .penner-magic {
+.on-slide-33 .penner-magic {
 	color: #080;
 	font-weight: bold;
 }
@@ -313,9 +315,12 @@
 #rendezvoush {
 	background-image: url(../img/rendezvous4.png);
 }
-
-
-
 #hiwd-container {
 	position: relative;
+}
+#keanu-woah {
+	background: url(../img/nospoon.jpg) no-repeat 500px 22px;
+}
+#spartacss {
+	margin: 0;
 }

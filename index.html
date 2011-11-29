@@ -215,13 +215,7 @@ function d3_ease_reflect(f) {
 	
 	<section class="slide" id="keanu-woah">
 		<h2>There Is No Spoon</h2>
-		[picture of Neo]
-		<div class="hide-on-next">
-			<p>Once you know the workings, you can manipulate.</p>
-			<h3>Shameless self promotion</h3>
-			<p><a href="http://gilmoreorless.github.com/jquery-easing-repeater/">jQuery Easing Repeater</a></p>
-			<p><a href="http://gilmoreorless.github.com/jquery-easing-molecules/">jQuery Easing Molecules</a></p>
-		</div>
+		<p>Once you know the workings, you can manipulate.</p>
 		
 		<div class="slide tardis">
 			<h3>Up and atom!</h3>
@@ -243,14 +237,16 @@ transition-function: cubic-bezier(0.25, 0, 1, 0.75);
 			[image of CSS easing graph]
 		</div>
 		
-		<div class="slide">
-			[image of 300/SydCSS]
-			<div class="slide">
-				<h3>But wait!</h3>
-				<p>Raphaël supports the cubic bezier syntax, so there is relevance after all.</p>
-				<pre><code>elem.animate(params, duration, "cubic-bezier(0.25, 0, 1, 0.75)")</code></pre>
-			</div>
-		</div>
+		<div class="slide hide-on-next" id="sydcss">
+            <img id="spartacss" src="img/spartacss.png" width="650" height="500" />
+        </div>
+        
+        <div class="slide" id="raphael-bezier">
+            <h3>But wait!</h3>
+            <p>Raphaël supports the cubic bezier syntax, so there is relevance after all.</p>
+            <pre><code>elem.animate(params, duration, "cubic-bezier(0.25, 0, 1, 0.75)")</code></pre>
+            <p>Take that, King Leonidas!</p>
+        </div>
 	</section>
 	
 	<section class="slide" id="the-end">
@@ -259,7 +255,9 @@ transition-function: cubic-bezier(0.25, 0, 1, 0.75);
 
 	<section class="slide" id="not-quite-the-end">
 		<h2>Links</h2>
-		TBC
+		<h3>Shameless self promotion</h3>
+		<p><a href="http://gilmoreorless.github.com/jquery-easing-repeater/">jQuery Easing Repeater</a></p>
+		<p><a href="http://gilmoreorless.github.com/jquery-easing-molecules/">jQuery Easing Molecules</a></p>
 	</section>
 
 	<script src="js/jquery-1.6.2.min.js"></script>
