@@ -315,8 +315,33 @@
 #rendezvoush {
 	background-image: url(../img/rendezvous4.png);
 }
-#hiwd-container {
+#hiwd-container, #cemd-container {
 	position: relative;
+}
+#cemd-container {
+    z-index: 10;
+}
+.deck-container .deck-before.deck-child-current .hide-when-before {
+    display: none;
+}
+.cemd-anim-container {
+    clear: left;
+    float: left;
+    width: 50%;
+}
+.deck-container .cemd-animatable {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-top: 2px;
+    padding: 6px 0;
+    position: relative;
+    text-align: center;
+    width: 100px;
+}
+.deck-container .cemd-animatable-fx {
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 #keanu-woah {
 	background: url(../img/nospoon.jpg) no-repeat 500px 22px;

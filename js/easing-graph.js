@@ -14,12 +14,6 @@ Raphael.fn.drawGrid = Raphael.fn.drawGrid || function (x, y, w, h, wv, hv, color
 
 (function (window, $) {
     
-//    var gWidth     = 400
-//      , gPadding   = 150
-//      , resolution = 300
-//      , gBaseline  = gWidth + gPadding
-//      , gHeight    = gWidth + gPadding * 2
-    
     window.Graph = function Graph(id, easings, options) {
         if (!(this instanceof Graph)) {
             return new Graph(id, easings, options);
@@ -99,13 +93,13 @@ Raphael.fn.drawGrid = Raphael.fn.drawGrid || function (x, y, w, h, wv, hv, color
         }).clear();
     }
     
-    gproto.drawEasing = function (easingFunc) {
+    gproto.drawEasing = function (easingFunc, colour) {
         if (!Raphael.is(easingFunc, 'array')) {
             easingFunc = [easingFunc];
         }
+        colour || (colour = this.nextColour());
         var easingBg = easingFunc[0]
           , easingFg = easingFunc[1] || easingFunc[0]
-          , colour = this.nextColour()
           , bgAttrs = {
                 stroke: colour
               , 'stroke-width': 7

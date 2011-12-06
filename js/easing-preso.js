@@ -213,5 +213,72 @@
             }
         }
     })();
+    
+    // Common easing methods - with graph
+    (function () {
+        var paper = Raphael('cemd-container', 330, 420)
+          , opts = {
+                paper: paper
+              , width: 300
+              , height: 300
+              , paddingLeft: 15
+              , paddingTop: 60
+              , gridSize: 16
+            }
+          , graph = Graph('hiwd-graph', null, opts)
+          , colours = {
+                sine:    ['hsl(10, 90, 70)', 0]
+              , quad:    ['hsl(35, 90, 70)', 0]
+              , cubic:   ['hsl(75, 90, 70)', 0]
+              , quart:   ['hsl(105, 90, 70)', 0]
+              , quint:   ['hsl(165, 90, 70)', 0]
+              , expo:    ['hsl(200, 90, 70)', 0]
+              , circ:    ['hsl(230, 90, 70)', 0]
+              , back:    ['hsl(255, 90, 70)', 1]
+              , bounce:  ['hsl(295, 90, 70)', 1]
+              , elastic: ['hsl(345, 90, 70)', 1]
+            }
+          , easingList = {}
+        
+        $.each(colours, function (easing, colour) {
+            var cssColour = Raphael.getRGB(colour[0]);
+            $('#cemd-anim-' + easing).css({backgroundColor: cssColour});
+            
+            var name = easing.substr(0, 1).toUpperCase() + easing.substr(1)
+              , fullName = 'easeOut' + name
+              , func = $.easing[fullName]
+              , key = colour[1] ? easing : 'basic'
+            ;(easingList[key] || (easingList[key] = [])).push({
+                colour: colour[0]
+              , func: func
+              , name: easing
+              , fullName: fullName
+            });
+        });
+        
+        var slideTriggers = {
+            22: 'basic'
+          , 24: 'back'
+          , 25: 'bounce'
+          , 26: 'elastic'
+        }
+        $(document).bind('deck.change', function (e, from, to) {
+            if (from in slideTriggers) {
+                graph.clear();
+            }
+            if (to in slideTriggers) {
+                var width = $('.cemd-anim-container').width();
+                
+                $.each(easingList[slideTriggers[to]], function (key, easing) {
+                    graph.drawEasing(easing.func, easing.colour);
+                    $('#cemd-anim-' + easing.name)
+                        .css({left: width})
+                        .delay(200)
+                        .animate({left: 0}, 1000, easing.fullName)
+                });
+            }
+        });
+        
+    })();
 
 })(jQuery, jQuery.deck)

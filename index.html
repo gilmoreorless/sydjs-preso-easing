@@ -7,7 +7,6 @@
 	
 	<link rel="stylesheet" href="css/deck.core.css" type="text/css">
 	<link rel="stylesheet" href="css/easing-preso.css" type="text/css">
-<!--	<link rel="stylesheet" href="css/horizontal-slide.css" type="text/css">-->
 	
 	<script src="js/modernizr.custom.js"></script>
 </head>
@@ -22,7 +21,7 @@
 		<ul>
 			<li>[redacted], JS developer at Atlassian</li>
 			<li>Attended every SydJS held so far</li>
-			<li><a href="http://twitter.com/iamnotyourbroom">@iamnotyourbroom</a></li>
+			<li><a class="twitter" href="http://twitter.com/iamnotyourbroom">@iamnotyourbroom</a></li>
 			<li>Hey look! “Bullet” points</li>
 		</ul>
 	</section>
@@ -118,24 +117,24 @@
 	<section class="slide" id="common-easing-methods">
 		<h2>Common Easing Methods</h2>
 		<div class="cemd-anim-container">
-			<h3>Smooth Curves</h3>
-			<div class="slide animatable cemd-animatable" id="cemd-anim-sine">Sine</div>
-<!--			<div class="slide animatable cemd-animatable" id="cemd-anim-quad">Quad</div>
-			<div class="slide animatable cemd-animatable" id="cemd-anim-cubic">Cubic</div>
-			<div class="slide animatable cemd-animatable" id="cemd-anim-quart">Quart</div>
-			<div class="slide animatable cemd-animatable" id="cemd-anim-quint">Quint</div>
-			<div class="slide animatable cemd-animatable" id="cemd-anim-expo">Expo(nential)</div>
-			<div class="slide animatable cemd-animatable" id="cemd-anim-circle">Circle</div>-->
+            <h3 class="hide-when-before">Smooth Curves</h3>
+            <div class="slide hide-on-next">
+                <div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-sine">Sine</div>
+                <div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-quad">Quad</div>
+                <div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-cubic">Cubic</div>
+                <div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-quart">Quart</div>
+                <div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-quint">Quint</div>
+                <div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-expo">Expo</div>
+                <div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-circ">Circ</div>
+            </div>
 		</div>
 		<div class="cemd-anim-container slide">
 			<h3>Special Effects</h3>
-			<div class="slide animatable cemd-animatable" id="cemd-anim-back">Back</div>
-			<div class="slide animatable cemd-animatable" id="cemd-anim-bounce">Bounce</div>
-			<div class="slide animatable cemd-animatable" id="cemd-anim-elastic">Elastic</div>
+            <div class="slide cemd-animatable cemd-animatable-fx" id="cemd-anim-back">Back</div>
+            <div class="slide cemd-animatable cemd-animatable-fx" id="cemd-anim-bounce">Bounce</div>
+            <div class="slide cemd-animatable cemd-animatable-fx" id="cemd-anim-elastic">Elastic</div>
 		</div>
-		<div class="graph-container" id="cemd-container">
-			[Easing graph goes here]
-		</div>
+        <div class="graph-container" id="cemd-container"></div>
 	</section>
 	
 	<section class="slide" id="js-impl-2">
@@ -255,6 +254,8 @@ transition-function: cubic-bezier(0.25, 0, 1, 0.75);
 
 	<section class="slide" id="not-quite-the-end">
 		<h2>Links</h2>
+        <h3>More Information</h3>
+        <p><a href="http://robertpenner.com/easing/">Robert Penner’s easing site</a></p>
 		<h3>Shameless self promotion</h3>
 		<p><a href="http://gilmoreorless.github.com/jquery-easing-repeater/">jQuery Easing Repeater</a></p>
 		<p><a href="http://gilmoreorless.github.com/jquery-easing-molecules/">jQuery Easing Molecules</a></p>
