@@ -185,7 +185,8 @@
         
         function setControlX(x, e) {
             if (!cStartX) {
-                cStartX = x - (e.offsetX - 165);
+				var x0 = ~~($('#hiwd-container').offset().left);
+                cStartX = x0 + 165;
                 cEndX = cStartX + 300;
             }
             x = Math.max(cStartX, Math.min(x, cEndX))
@@ -248,7 +249,7 @@
               , fullName = 'easeOut' + name
               , func = $.easing[fullName]
               , key = colour[1] ? easing : 'basic'
-            ;(easingList[key] || (easingList[key] = [])).push({
+            ;(easingList[key] || (easingList[key] = [])).unshift({
                 colour: colour[0]
               , func: func
               , name: easing

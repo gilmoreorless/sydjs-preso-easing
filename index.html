@@ -21,7 +21,7 @@
 		<ul>
 			<li>[redacted], JS developer at Atlassian</li>
 			<li>Attended every SydJS held so far</li>
-			<li><a class="twitter" href="http://twitter.com/iamnotyourbroom">@iamnotyourbroom</a></li>
+			<li class="twitter"><a href="http://twitter.com/iamnotyourbroom">@iamnotyourbroom</a></li>
 			<li>Hey look! “Bullet” points</li>
 		</ul>
 	</section>
@@ -41,10 +41,14 @@
 	<section class="slide" id="penner">
 		<h2>Robert Penner</h2>
 		<ul>
-			<li>[Flash dev]</li>
-			<li>[Needed more natural animations, programmatically]</li>
-			<li>[Created the first Easing function]</li>
-			<li>[His functions are the cornerstone of all JS animation techniques]</li>
+			<li>Flash developer, author of <cite>Programming Macromedia Flash MX</cite></li>
+			<li>Dissatisfied with standard programmatic animation methods</li>
+			<li>Created the first flexible, reusable Easing functions</li>
+			<li>&hellip;which are the cornerstone of all JS animation techniques today</li>
+		</ul>
+		<p>In other words&hellip;</p>
+		<ul>
+			<li>Don’t ignore your Flash friends, they have much to teach</li>
 		</ul>
 	</section>
 
@@ -117,24 +121,24 @@
 	<section class="slide" id="common-easing-methods">
 		<h2>Common Easing Methods</h2>
 		<div class="cemd-anim-container">
-            <h3 class="hide-when-before">Smooth Curves</h3>
-            <div class="slide hide-on-next">
-                <div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-sine">Sine</div>
-                <div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-quad">Quad</div>
-                <div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-cubic">Cubic</div>
-                <div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-quart">Quart</div>
-                <div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-quint">Quint</div>
-                <div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-expo">Expo</div>
-                <div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-circ">Circ</div>
-            </div>
+			<h3 class="hide-when-before">Smooth Curves</h3>
+			<div class="slide hide-on-next" id="smooth-curves">
+				<div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-sine">Sine</div>
+				<div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-quad">Quad</div>
+				<div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-cubic">Cubic</div>
+				<div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-quart">Quart</div>
+				<div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-quint">Quint</div>
+				<div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-expo">Expo</div>
+				<div class="cemd-animatable cemd-animatable-basic" id="cemd-anim-circ">Circ</div>
+			</div>
 		</div>
-		<div class="cemd-anim-container slide">
+		<div class="cemd-anim-container slide" id="special-effects">
 			<h3>Special Effects</h3>
-            <div class="slide cemd-animatable cemd-animatable-fx" id="cemd-anim-back">Back</div>
-            <div class="slide cemd-animatable cemd-animatable-fx" id="cemd-anim-bounce">Bounce</div>
-            <div class="slide cemd-animatable cemd-animatable-fx" id="cemd-anim-elastic">Elastic</div>
+			<div class="slide cemd-animatable cemd-animatable-fx" id="cemd-anim-back">Back</div>
+			<div class="slide cemd-animatable cemd-animatable-fx" id="cemd-anim-bounce">Bounce</div>
+			<div class="slide cemd-animatable cemd-animatable-fx" id="cemd-anim-elastic">Elastic</div>
 		</div>
-        <div class="graph-container" id="cemd-container"></div>
+		<div class="graph-container" id="cemd-container"></div>
 	</section>
 	
 	<section class="slide" id="js-impl-2">
@@ -237,15 +241,15 @@ transition-function: cubic-bezier(0.25, 0, 1, 0.75);
 		</div>
 		
 		<div class="slide hide-on-next" id="sydcss">
-            <img id="spartacss" src="img/spartacss.png" width="650" height="500" />
-        </div>
-        
-        <div class="slide" id="raphael-bezier">
-            <h3>But wait!</h3>
-            <p>Raphaël supports the cubic bezier syntax, so there is relevance after all.</p>
-            <pre><code>elem.animate(params, duration, "cubic-bezier(0.25, 0, 1, 0.75)")</code></pre>
-            <p>Take that, King Leonidas!</p>
-        </div>
+			<img id="spartacss" src="img/spartacss.png" width="650" height="500" alt="This is not SydCSS" />
+		</div>
+		
+		<div class="slide" id="raphael-bezier">
+			<h3>But wait!</h3>
+			<p>Raphaël supports the cubic bezier syntax, so there is relevance after all.</p>
+			<pre><code>elem.animate(params, duration, "cubic-bezier(0.25, 0, 1, 0.75)")</code></pre>
+			<h3 id="leonidas">Take that, King Leonidas!</h3>
+		</div>
 	</section>
 	
 	<section class="slide" id="the-end">
@@ -254,8 +258,12 @@ transition-function: cubic-bezier(0.25, 0, 1, 0.75);
 
 	<section class="slide" id="not-quite-the-end">
 		<h2>Links</h2>
-        <h3>More Information</h3>
-        <p><a href="http://robertpenner.com/easing/">Robert Penner’s easing site</a></p>
+		<h3>More Information</h3>
+		<p><a href="http://robertpenner.com/easing/">Robert Penner’s easing site</a></p>
+		<h3>CSS Easing Tools</h3>
+		<p><a href="#LINK-NEEDED">Ceaser</a></p>
+		<p><a href="#LINK-NEEDED">Cubic Bezier</a></p>
+		<p><a href="#LINK-NEEDED">(something else)</a></p>
 		<h3>Shameless self promotion</h3>
 		<p><a href="http://gilmoreorless.github.com/jquery-easing-repeater/">jQuery Easing Repeater</a></p>
 		<p><a href="http://gilmoreorless.github.com/jquery-easing-molecules/">jQuery Easing Molecules</a></p>

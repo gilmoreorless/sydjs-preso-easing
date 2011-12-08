@@ -195,6 +195,9 @@
   top: 0;
 }
 
+.deck-container li cite {
+	font-style: italic;
+}
 .deck-container:not(.deck-menu) > .deck-before .hide-on-next:not(.deck-current),
 .deck-container:not(.deck-menu) > .deck-previous .hide-on-next:not(.deck-current),
 .hide-on-next + .slide.deck-next,
@@ -277,6 +280,9 @@
 	font-size: 1.3em;
 	list-style-image: url(../img/bullet.png);
 }
+.deck-container li.twitter {
+	list-style-image: url(../img/iamnotyourbroom.png);
+}
 .img-header h2 span {
 	background-position: 0 0;
 	background-repeat: no-repeat;
@@ -319,33 +325,45 @@
 	position: relative;
 }
 #cemd-container {
-    z-index: 10;
+	z-index: 10;
 }
 .deck-container .deck-before.deck-child-current .hide-when-before {
-    display: none;
+	display: none;
 }
 .cemd-anim-container {
-    clear: left;
-    float: left;
-    width: 50%;
+	clear: left;
+	float: left;
+	width: 50%;
 }
 .deck-container .cemd-animatable {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    margin-top: 2px;
-    padding: 6px 0;
-    position: relative;
-    text-align: center;
-    width: 100px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-top: 5px;
+	padding: 6px 0;
+	position: relative;
+	text-align: center;
+	width: 100px;
 }
 .deck-container .cemd-animatable-fx {
-    color: #fff;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+#penner h2 {
+	background: url(../img/penner.jpg) no-repeat 0 22px;
+	height: 137px;
+	padding-left: 150px;
 }
 #keanu-woah {
 	background: url(../img/nospoon.jpg) no-repeat 500px 22px;
 }
 #spartacss {
 	margin: 0;
+}
+#leonidas {
+	background: url(../img/leonidas.png) no-repeat 0 0;
+	height: 248px;
+	line-height: 248px;
+	margin-top: 2em;
+	padding-left: 200px;
 }
