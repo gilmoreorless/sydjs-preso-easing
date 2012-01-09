@@ -242,18 +242,18 @@
 .deck-container .implementors + p {
 	padding-top: .7em;
 }
-.on-slide-31 .perc ,
-.on-slide-32 .perc {
+.on-slide-29 .perc ,
+.on-slide-30 .perc {
 	color: #00c;
 	font-weight: bold;
 }
-.on-slide-30 .redundant ,
-.on-slide-31 .redundant ,
-.on-slide-32 .redundant {
+.on-slide-28 .redundant ,
+.on-slide-29 .redundant ,
+.on-slide-30 .redundant {
 	color: #c00;
 	font-weight: bold;
 }
-.on-slide-33 .penner-magic {
+.on-slide-31 .penner-magic {
 	color: #080;
 	font-weight: bold;
 }
@@ -366,4 +366,11 @@
 	line-height: 248px;
 	margin-top: 2em;
 	padding-left: 200px;
+}
+#css img {
+	margin: 1em 0 0;
+}
+#css .small {
+	font-size: .9em;
+	margin-top: .5em;
 }

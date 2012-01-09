@@ -43,7 +43,7 @@
               , gridSize: 16
               , hue: 100
             }
-          , easing = 'easeInCubic'
+          , easing = 'linear'
           , easingFn = Raphael.easing_formulas[easing]
           , graph = Graph('hiwd-graph', easingFn, opts)
           , colours = {
@@ -118,6 +118,11 @@
           , moveableAnimation = Raphael.animation({timeY: 1}, animTime)
           , controlAnimation = Raphael.animation({timeX: 1}, animTime)
         
+        drawEasingButton({
+            x: 530, y: 210
+          , text: 'Linear'
+          , easing: 'linear'
+        })
         drawEasingButton({
             x: 530, y: 240
           , text: 'Ease In'
@@ -258,10 +263,10 @@
         });
         
         var slideTriggers = {
-            22: 'basic'
-          , 24: 'back'
-          , 25: 'bounce'
-          , 26: 'elastic'
+            21: 'basic'
+          , 23: 'back'
+          , 24: 'bounce'
+          , 25: 'elastic'
         }
         $(document).bind('deck.change', function (e, from, to) {
             if (from in slideTriggers) {

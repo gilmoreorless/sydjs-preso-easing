@@ -22,6 +22,7 @@
 			<li>[redacted], JS developer at Atlassian</li>
 			<li>Attended every SydJS held so far</li>
 			<li class="twitter"><a href="http://twitter.com/iamnotyourbroom">@iamnotyourbroom</a></li>
+			<li class="github"><a href="https://github.com/gilmoreorless">github.com/gilmoreorless</a></li>
 			<li>Hey look! “Bullet” points</li>
 		</ul>
 	</section>
@@ -108,8 +109,10 @@
 		<h2>Easing for <span>Smarties</span></h2>
 		<p>At its most basic level, an easing function takes the amount of time that has elapsed for an animation,
 			and returns a new position for the animation based on a function of the time.</p>
-		<p class="slide" id="confuzzled">Confused? Bored?</p>
-		<p class="slide" id="confusion-begone">Never fear, shiny graphs to the rescue!</p>
+		<div class="slide" id="confuzzled">
+			<p>Confused? Bored?</p>
+			<p>Never fear, shiny graphs to the rescue!</p>
+		</div>
 	</section>
 	
 	<section class="slide" id="how-it-works-demo">
@@ -144,7 +147,7 @@
 	<section class="slide" id="js-impl-2">
 		<h2>JS Implementation #2 - Cruft Removal</h2>
 		<p class="implementors"><span>Raphaël &amp; Scriptaculous</span></p>
-		<p>Single parameter for percentage<span class="slide" id="js-impl-2-extra"> &ndash; everything else should be handled by the framework.</span></p>
+		<p>Single parameter for percentage &ndash; everything else should be handled by the framework.</p>
 		
 		<div class="overview-example" id="js-impl-raphael">
 			<strong>Raphaël</strong> &ndash; similar to Penner’s but tweaked
@@ -181,9 +184,9 @@
 }</code></pre>
 		</div>
 		
-		<h3 class="slide">Redundant code is redundant<span class="slide">, and redundant as well</span></h3>
+		<h3 class="slide" id="redundant">Redundant code is redundant<span class="slide" id="redundantant">, and redundant as well</span></h3>
 		<p class="slide" id="dont-care">Easing functions shouldn’t have to care about the start/end values, only the percentage matters.</p>
-		<p class="slide"><span class="penner-magic">1.70158</span> = Penner’s Magic Number.</p>
+		<p class="slide" id="magic-number"><span class="penner-magic">1.70158</span> = Penner’s Magic Number.</p>
 	</section>
 	
 	<section class="slide" id="js-impl-3">
@@ -233,11 +236,12 @@ function d3_ease_reflect(f) {
 		<h2>A Little Bit of CSS</h2>
 		<div class="hide-on-next">
 			<p>CSS easing functions based on bezier curves.</p>
-			<pre><code>transition-function: ease-in;
+			<pre><code>transition-timing-function: ease-in-out;
 /* Equivalent to */
-transition-function: cubic-bezier(0.25, 0, 1, 0.75);
+transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 </code></pre>
-			[image of CSS easing graph]
+			<img src="img/csseaseinout.png" width="235" height="235" alt="CSS Easing Graph" />
+			<p class="small">(Graph from matthewlein.com/ceaser)</p>
 		</div>
 		
 		<div class="slide hide-on-next" id="sydcss">
@@ -247,7 +251,7 @@ transition-function: cubic-bezier(0.25, 0, 1, 0.75);
 		<div class="slide" id="raphael-bezier">
 			<h3>But wait!</h3>
 			<p>Raphaël supports the cubic bezier syntax, so there is relevance after all.</p>
-			<pre><code>elem.animate(params, duration, "cubic-bezier(0.25, 0, 1, 0.75)")</code></pre>
+			<pre><code>elem.animate(params, duration, "cubic-bezier(0.42, 0, 0.58, 1)")</code></pre>
 			<h3 id="leonidas">Take that, King Leonidas!</h3>
 		</div>
 	</section>
@@ -261,9 +265,8 @@ transition-function: cubic-bezier(0.25, 0, 1, 0.75);
 		<h3>More Information</h3>
 		<p><a href="http://robertpenner.com/easing/">Robert Penner’s easing site</a></p>
 		<h3>CSS Easing Tools</h3>
-		<p><a href="#LINK-NEEDED">Ceaser</a></p>
-		<p><a href="#LINK-NEEDED">Cubic Bezier</a></p>
-		<p><a href="#LINK-NEEDED">(something else)</a></p>
+		<p><a href="http://matthewlein.com/ceaser/">Ceaser</a></p>
+		<p><a href="http://cubic-bezier.com/">Cubic Bezier</a></p>
 		<h3>Shameless self promotion</h3>
 		<p><a href="http://gilmoreorless.github.com/jquery-easing-repeater/">jQuery Easing Repeater</a></p>
 		<p><a href="http://gilmoreorless.github.com/jquery-easing-molecules/">jQuery Easing Molecules</a></p>
