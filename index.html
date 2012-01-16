@@ -19,8 +19,8 @@
 	<section class="slide" id="intro">
 		<h2>Who’s This Clown?</h2>
 		<ul>
-			<li>[redacted], JS developer at Atlassian</li>
-			<li>Attended every SydJS held so far</li>
+			<li>Gilmore Davidson, JS developer at Atlassian</li>
+			<li>SydJS junkie and occasional site updater</li>
 			<li class="twitter"><a href="http://twitter.com/iamnotyourbroom">@iamnotyourbroom</a></li>
 			<li class="github"><a href="https://github.com/gilmoreorless">github.com/gilmoreorless</a></li>
 			<li>Hey look! “Bullet” points</li>
@@ -146,11 +146,12 @@
 	
 	<section class="slide" id="js-impl-2">
 		<h2>JS Implementation #2 - Cruft Removal</h2>
-		<p class="implementors"><span>Raphaël &amp; Scriptaculous</span></p>
+		<p class="implementors"><span>Raphaël, Dojo &amp; Scriptaculous</span></p>
 		<p>Single parameter for percentage &ndash; everything else should be handled by the framework.</p>
 		
 		<div class="overview-example" id="js-impl-raphael">
-			<strong>Raphaël</strong> &ndash; similar to Penner’s but tweaked
+			<strong>Dojo</strong> &ndash; All of Penner’s equations in a new format<br>
+			<strong>Raphaël</strong> &ndash; similar to Dojo but tweaked a little
 			<pre><code>function (n) {
   return pow(n, 1.7);
 }</code></pre>
@@ -170,7 +171,7 @@
 		<div class="overview-example" id="js-impl-back-jquery">
 			<strong>jQuery.easing.easeInBack</strong>
 			<pre><code>function (<span class="perc">x</span><span class="redundant">, t, b, c, d, s</span>) {
-  if (s == undefined) s = <span class="penner-magic">1.70158</span>;
+  <span class="redundant">if (s == undefined)</span> s = <span class="penner-magic">1.70158</span>;
   return <span class="redundant">c * <span class="perc">(t /= d)</span></span> * t * ((s + 1) * t - s)<span class="redundant"> + b</span>;
 }
 </code></pre>
@@ -223,13 +224,21 @@ function d3_ease_reflect(f) {
 		<h2>There Is No Spoon</h2>
 		<p>Once you know the workings, you can manipulate.</p>
 		
-		<div class="slide tardis">
+		<div class="slide tardis" id="tardis-easing">
 			<h3>Up and atom!</h3>
-			<pre><code>function d3_ease_tardis(p) {
-  if (p < 1/5) return .5 * d3_ease_sin(p * 5);
-  return p;
+			<pre><code>function easeTardis(t) {
+    var steps = 9,
+        curStep = ~~(t * steps),
+        stepDiff = curStep / steps,
+        newPerc = (t - stepDiff) * steps,
+        newEasing = $.easing.easeInOutSine(newPerc);
+    if (curStep % 2) {
+        newEasing = 1 - newEasing;
+    }
+    return newEasing * .5 + t / 2;
 }</code></pre>
 		</div>
+        <div class="slide" id="tardis-demo"></div>
 	</section>
 	
 	<section class="slide" id="css">

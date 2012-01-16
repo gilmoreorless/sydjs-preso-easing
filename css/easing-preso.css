@@ -283,6 +283,9 @@
 .deck-container li.twitter {
 	list-style-image: url(../img/iamnotyourbroom.png);
 }
+.deck-container li.github {
+	list-style-image: url(../img/gravatar.jpg);
+}
 .img-header h2 span {
 	background-position: 0 0;
 	background-repeat: no-repeat;
@@ -356,6 +359,19 @@
 }
 #keanu-woah {
 	background: url(../img/nospoon.jpg) no-repeat 500px 22px;
+}
+#keanu-woah .tardis {
+	margin-top: 2em;
+}
+#tardis-demo {
+	background: url(../img/tardis.png) no-repeat 0 0;
+	height: 544px;
+	left: 50%;
+	margin-left: -158px;
+	margin-top: -272px;
+	top: 50%;
+	position: absolute;
+	width: 317px;
 }
 #spartacss {
 	margin: 0;

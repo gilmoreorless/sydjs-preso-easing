@@ -283,8 +283,28 @@
                         .animate({left: 0}, 1000, easing.fullName)
                 });
             }
-        });
-        
+        })
     })();
-
+    
+    // TARDIS easing
+    (function () {
+        $.easing.tardis = function easeTardis(t) {
+            var steps = 9,
+                curStep = ~~(t * steps),
+                stepDiff = curStep / steps,
+                newPerc = (t - stepDiff) * steps,
+                newEasing = $.easing.easeInOutSine(newPerc);
+            if (curStep % 2) {
+                newEasing = 1 - newEasing;
+            }
+            return newEasing * .5 + t * .5;
+        }
+        
+        $(document).bind('deck.change', function (e, from, to) {
+            if (to == 36) {
+                $('#tardis-demo').css('opacity', 0)
+                    .animate({opacity: 1}, 10000, 'tardis')
+            }
+        })
+    })();
 })(jQuery, jQuery.deck)
