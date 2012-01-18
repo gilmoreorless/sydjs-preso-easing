@@ -80,7 +80,7 @@
   transform: rotate(3deg);
 }
 .deck-container code {
-  color: #6485A6;
+  color: #396B9D;
 }
 .deck-container blockquote,
 .deck-container blockquote.slide {
@@ -242,18 +242,18 @@
 .deck-container .implementors + p {
 	padding-top: .7em;
 }
-.on-slide-29 .perc ,
-.on-slide-30 .perc {
+.on-slide-28 .perc ,
+.on-slide-29 .perc {
 	color: #00c;
 	font-weight: bold;
 }
+.on-slide-27 .redundant ,
 .on-slide-28 .redundant ,
-.on-slide-29 .redundant ,
-.on-slide-30 .redundant {
+.on-slide-29 .redundant {
 	color: #c00;
 	font-weight: bold;
 }
-.on-slide-31 .penner-magic {
+.on-slide-30 .penner-magic {
 	color: #080;
 	font-weight: bold;
 }
@@ -389,4 +389,7 @@
 #css .small {
 	font-size: .9em;
 	margin-top: .5em;
+}
+#not-quite-the-end p {
+	margin-bottom: .5em;
 }

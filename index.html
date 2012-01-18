@@ -118,7 +118,6 @@
 	<section class="slide" id="how-it-works-demo">
 		<h2>Easing for Those Who Like Graphs</h2>
 		<div id="hiwd-container"></div>
-		<p class="slide" id="padolsey">Check out <a href="http://james.padolsey.com/demos/jquery/easing/">James Padolsey’s Interactive Easing Demo</a> for more fun.</p>
 	</section>
 	
 	<section class="slide" id="common-easing-methods">
@@ -226,7 +225,7 @@ function d3_ease_reflect(f) {
 		
 		<div class="slide tardis" id="tardis-easing">
 			<h3>Up and atom!</h3>
-			<pre><code>function easeTardis(t) {
+			<pre><code>$.easing.tardis = function easeTardis(t) {
     var steps = 9,
         curStep = ~~(t * steps),
         stepDiff = curStep / steps,
@@ -236,9 +235,10 @@ function d3_ease_reflect(f) {
         newEasing = 1 - newEasing;
     }
     return newEasing * .5 + t / 2;
-}</code></pre>
+}
+$(elem).animate({opacity: 1}, 10000, 'tardis');</code></pre>
 		</div>
-        <div class="slide" id="tardis-demo"></div>
+		<div class="slide" id="tardis-demo"></div>
 	</section>
 	
 	<section class="slide" id="css">
@@ -273,12 +273,15 @@ transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 		<h2>Links</h2>
 		<h3>More Information</h3>
 		<p><a href="http://robertpenner.com/easing/">Robert Penner’s easing site</a></p>
+		<h3>jQuery Easing</h3>
+		<p><a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing plugin</a></p>
+		<p><a href="http://james.padolsey.com/demos/jquery/easing/">James Padolsey’s Interactive Easing Demo</a></p>
 		<h3>CSS Easing Tools</h3>
 		<p><a href="http://matthewlein.com/ceaser/">Ceaser</a></p>
 		<p><a href="http://cubic-bezier.com/">Cubic Bezier</a></p>
 		<h3>Shameless self promotion</h3>
 		<p><a href="http://gilmoreorless.github.com/jquery-easing-repeater/">jQuery Easing Repeater</a></p>
-		<p><a href="http://gilmoreorless.github.com/jquery-easing-molecules/">jQuery Easing Molecules</a></p>
+		<p><a href="https://github.com/gilmoreorless/jquery-easing-molecules/">jQuery Easing Molecules (WIP)</a></p>
 	</section>
 
 	<script src="js/jquery-1.7.1.min.js"></script>

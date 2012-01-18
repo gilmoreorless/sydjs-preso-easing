@@ -190,7 +190,7 @@
         
         function setControlX(x, e) {
             if (!cStartX) {
-				var x0 = ~~($('#hiwd-container').offset().left);
+                var x0 = ~~($('#hiwd-container').offset().left);
                 cStartX = x0 + 165;
                 cEndX = cStartX + 300;
             }
@@ -263,10 +263,10 @@
         });
         
         var slideTriggers = {
-            21: 'basic'
-          , 23: 'back'
-          , 24: 'bounce'
-          , 25: 'elastic'
+            20: 'basic'
+          , 22: 'back'
+          , 23: 'bounce'
+          , 24: 'elastic'
         }
         $(document).bind('deck.change', function (e, from, to) {
             if (from in slideTriggers) {
@@ -301,7 +301,7 @@
         }
         
         $(document).bind('deck.change', function (e, from, to) {
-            if (to == 36) {
+            if (to == 35) {
                 $('#tardis-demo').css('opacity', 0)
                     .animate({opacity: 1}, 10000, 'tardis')
             }
