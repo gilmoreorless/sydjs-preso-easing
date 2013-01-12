@@ -4,10 +4,10 @@
 	<meta charset="utf-8">
 	<title>SydJS Easing Presentation</title>
 	<meta name="viewport" content="width=1024, user-scalable=no">
-	
+
 	<link rel="stylesheet" href="css/deck.core.css" type="text/css">
 	<link rel="stylesheet" href="css/easing-preso.css" type="text/css">
-	
+
 	<script src="js/modernizr.custom.js"></script>
 </head>
 <body class="deck-container">
@@ -15,7 +15,7 @@
 	<section class="slide" id="start">
 		<h1>Ease Yourself Into Animation<span class="slide" id="ahem">(That’s what she said)</span></h1>
 	</section>
-	
+
 	<section class="slide" id="intro">
 		<h2>Who’s This Clown?</h2>
 		<ul>
@@ -67,19 +67,19 @@
 		</div>
 		<p class="slide" id="min-huzzah">Perfect for byte-conscious JS!</p>
 	</section>
-	
+
 	<section class="slide" id="js-impl-1">
 		<h2>JS Implementation #1 - Penner Ported</h2>
 		<p class="implementors"><span>jQuery &amp; jQuery UI</span></p>
 		<p>Penner’s system copied almost exactly.</p>
-		
+
 		<div class="overview-example" id="flash-impl">
 			<strong>Penner’s ActionScript</strong>
 			<pre><code>Math.easeInOutSine = function (t, b, c, d) {
   return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
 };</code></pre>
 		</div>
-		
+
 		<div class="overview-example" id="js-impl-jquery">
 			<strong>jQuery</strong>
 			<pre><code>jQuery.easing.swing = function( p, n, firstNum, diff ) {
@@ -87,7 +87,7 @@
 }</code></pre>
 		</div>
 	</section>
-	
+
 	<section class="slide img-header" id="how-it-works-basic">
 		<h2>Easing for <span>Dummies</span></h2>
 		<p>Clandestine rendezvous between secret agents:</p>
@@ -104,7 +104,7 @@
 			<p>Animation sets the time, Easing sets the place</p>
 		</div>
 	</section>
-	
+
 	<section class="slide img-header" id="how-it-works-desc">
 		<h2>Easing for <span>Smarties</span></h2>
 		<p>At its most basic level, an easing function takes the amount of time that has elapsed for an animation,
@@ -114,12 +114,12 @@
 			<p>Never fear, shiny graphs to the rescue!</p>
 		</div>
 	</section>
-	
+
 	<section class="slide" id="how-it-works-demo">
 		<h2>Easing for Those Who Like Graphs</h2>
 		<div id="hiwd-container"></div>
 	</section>
-	
+
 	<section class="slide" id="common-easing-methods">
 		<h2>Common Easing Methods</h2>
 		<div class="cemd-anim-container">
@@ -142,12 +142,12 @@
 		</div>
 		<div class="graph-container" id="cemd-container"></div>
 	</section>
-	
+
 	<section class="slide" id="js-impl-2">
 		<h2>JS Implementation #2 - Cruft Removal</h2>
 		<p class="implementors"><span>Raphaël, Dojo &amp; Scriptaculous</span></p>
 		<p>Single parameter for percentage &ndash; everything else should be handled by the framework.</p>
-		
+
 		<div class="overview-example" id="js-impl-raphael">
 			<strong>Dojo</strong> &ndash; All of Penner’s equations in a new format<br>
 			<strong>Raphaël</strong> &ndash; similar to Dojo but tweaked a little
@@ -155,7 +155,7 @@
   return pow(n, 1.7);
 }</code></pre>
 		</div>
-		
+
 		<div class="overview-example" id="js-impl-scriptaculous">
 			<strong>Scriptaculous</strong> &ndash; very few Penner equations, provided defaults aren’t as useful
 			<pre><code>function(pos) {
@@ -163,10 +163,10 @@
 }</code></pre>
 		</div>
 	</section>
-	
+
 	<section class="slide" id="examination">
 		<h2>Look a little deeper: ease-in-back</h2>
-		
+
 		<div class="overview-example" id="js-impl-back-jquery">
 			<strong>jQuery.easing.easeInBack</strong>
 			<pre><code>function (<span class="perc">x</span><span class="redundant">, t, b, c, d, s</span>) {
@@ -175,7 +175,7 @@
 }
 </code></pre>
 		</div>
-		
+
 		<div class="overview-example" id="js-impl-back-raphael">
 			<strong>Raphael.easing_formulas.backIn</strong>
 			<pre><code>function (<span class="perc">n</span>) {
@@ -183,17 +183,17 @@
   return n * <span class="perc">n</span> * ((s + 1) * n - s);
 }</code></pre>
 		</div>
-		
+
 		<h3 class="slide" id="redundant">Redundant code is redundant<span class="slide" id="redundantant">, and redundant as well</span></h3>
 		<p class="slide" id="dont-care">Easing functions shouldn’t have to care about the start/end values, only the percentage matters.</p>
 		<p class="slide" id="magic-number"><span class="penner-magic">1.70158</span> = Penner’s Magic Number.</p>
 	</section>
-	
+
 	<section class="slide" id="js-impl-3">
 		<h2>JS Implementation #3 - Atoms</h2>
 		<p class="implementors"><span>MooTools &amp; D3</span></p>
 		<p>DRY &ndash; maximum code reuse.</p>
-		
+
 		<div class="overview-example hide-on-next" id="js-impl-mootools">
 			<strong>MooTools</strong>
 			<pre><code>['Quad', 'Cubic', 'Quart', 'Quint'].each(function(transition, i){
@@ -202,7 +202,7 @@
   });
 });</code></pre>
 		</div>
-		
+
 		<div class="overview-example slide" id="js-impl-d3">
 			<strong>D3</strong>
 			<pre><code>function d3_ease_reverse(f) {
@@ -218,11 +218,11 @@ function d3_ease_reflect(f) {
 }</code></pre>
 		</div>
 	</section>
-	
+
 	<section class="slide" id="keanu-woah">
 		<h2>There Is No Spoon</h2>
 		<p>Once you know the workings, you can manipulate.</p>
-		
+
 		<div class="slide tardis" id="tardis-easing">
 			<h3>Up and atom!</h3>
 			<pre><code>$.easing.tardis = function easeTardis(t) {
@@ -240,7 +240,7 @@ $(elem).animate({opacity: 1}, 10000, 'tardis');</code></pre>
 		</div>
 		<div class="slide" id="tardis-demo"></div>
 	</section>
-	
+
 	<section class="slide" id="css">
 		<h2>A Little Bit of CSS</h2>
 		<div class="hide-on-next">
@@ -252,11 +252,11 @@ transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 			<img src="img/csseaseinout.png" width="235" height="235" alt="CSS Easing Graph" />
 			<p class="small">(Graph from matthewlein.com/ceaser)</p>
 		</div>
-		
+
 		<div class="slide hide-on-next" id="sydcss">
 			<img id="spartacss" src="img/spartacss.png" width="650" height="500" alt="This is not SydCSS" />
 		</div>
-		
+
 		<div class="slide" id="raphael-bezier">
 			<h3>But wait!</h3>
 			<p>Raphaël supports the cubic bezier syntax, so there is relevance after all.</p>
@@ -264,7 +264,7 @@ transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 			<h3 id="leonidas">Take that, King Leonidas!</h3>
 		</div>
 	</section>
-	
+
 	<section class="slide" id="the-end">
 		<h1>Questions?</h1>
 	</section>
@@ -297,5 +297,18 @@ transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 			$.deck('.slide');
 		});
 	</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-8341018-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </body>
 </html>
