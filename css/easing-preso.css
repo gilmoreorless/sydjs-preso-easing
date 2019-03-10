@@ -393,3 +393,12 @@
 #not-quite-the-end p {
 	margin-bottom: .5em;
 }
+#controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5em;
+  text-align: center;
+  font-style: italic;
+}
